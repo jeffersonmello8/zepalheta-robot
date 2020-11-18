@@ -22,6 +22,7 @@ Submit my credentials
     Click Element   css:button[id*=Login]
 
 I must see the logged area
-    Wait Until Element is Visible   xpath://strong[text()='Sair']   5
+    Wait Until Page Contains   Aluguéis  5
+    Close Browser
 
      
