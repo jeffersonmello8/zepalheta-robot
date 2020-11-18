@@ -1,13 +1,5 @@
 ***Settings***
-Documentation   Login
-
 Library     SeleniumLibrary
-
-***Test Cases***
-Administrator Login
-    Acess login page
-    Submit my credentials   admin@zepalheta.com.br  pwd123
-    I must see the logged area
 
 ***Keywords***
 Acess login page
@@ -24,5 +16,3 @@ Submit my credentials
 I must see the logged area
     Wait Until Page Contains   Aluguéis  5
     Close Browser
-
-     
