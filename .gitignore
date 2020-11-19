@@ -5,10 +5,12 @@ target
 venv*
 .venv*
 .env
+.log
 *~
 MANIFEST
 atest/results
 utest/jasmine-results
+logs/
 .idea
 .vscode
 .*project
