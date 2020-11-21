@@ -1,8 +1,7 @@
 ***Settings***
 Documentation   Login
 
-Resource    ../resources/kws.robot
-Resource    ../resources/hooks.robot
+Resource    ../resources/base.robot
 
 #Perform before any test case
 Test Setup      Start Session
@@ -16,4 +15,3 @@ Sucessful Login
     Acess login page
     Submit my credentials   admin@zepalheta.com.br  pwd123
     I must see the logged area
-

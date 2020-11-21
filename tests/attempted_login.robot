@@ -1,8 +1,7 @@
 ***Settings***
 Documentation   Login
 
-Resource        ../resources/kws.robot
-Resource        ../resources/hooks.robot
+Resource        ../resources/base.robot
 
 #Perform before any test case
 Test Setup      Start Session
@@ -25,3 +24,4 @@ Incorrect Password              admin@zepalheta.com.br      abc123      Ocorreu 
 Blank Password                  admin@zepalheta.com.br      ${EMPTY}    O campo senha é obrigatório!
 Blank Email                     ${EMPTY}                    123456      O campo email é obrigatório!
 Email and Password in Blank     ${EMPTY}                    ${EMPTY}    Os campos email e senha não foram preenchidos!
+

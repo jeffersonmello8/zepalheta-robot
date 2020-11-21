@@ -1,6 +1,3 @@
-***Settings***
-Library     SeleniumLibrary
-
 ***Keywords***
 Acess login page
     Go To   http://zepalheta-web:3000/
