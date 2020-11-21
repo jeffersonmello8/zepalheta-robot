@@ -3,11 +3,11 @@ Documentation   Login
 
 Resource        ../resources/base.robot
 
-#Perform before any test case
-Test Setup      Start Session
+#Perform before test suite
+Suite Setup      Start Session
 
-#Perform after any test case
-Test Teardown   Finish Session
+#Perform after test suite
+Suite Teardown   Finish Session
 
 #Used to any tests cases
 Test Template   Attemped Login
