@@ -2,7 +2,15 @@
 Documentation   Login
 
 Resource        ../resources/kws.robot
+Resource        ../resources/hooks.robot
 
+#Perform before any test case
+Test Setup      Start Session
+
+#Perform after any test case
+Test Teardown   Finish Session
+
+#Used to any tests cases
 Test Template   Attemped Login
 
 ***Keywords***
