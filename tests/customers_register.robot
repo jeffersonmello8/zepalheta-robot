@@ -16,7 +16,7 @@ New Customer
 
 ***Keywords***
 Given that access the customer registration form
-    Wait Until Element Is Visible   css:a[href="/customers"]    5
-    Click Element                   css:a[href="/customers"]
-    Wait Until Element Is Visible   css:a[href$=register]       5
-    Click Element                   css:a[href$=register]
+    Wait Until Element Is Visible   ${NAV_CUSTOMERS}    5
+    Click Element                   ${NAV_CUSTOMERS}
+    Wait Until Element Is Visible   ${CUSTOMERS_FORM}   5
+    Click Element                   ${CUSTOMERS_FORM}
