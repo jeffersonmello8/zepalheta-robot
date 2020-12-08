@@ -5,9 +5,7 @@ Acess login page
 Submit my credentials
     [Arguments]     ${email}    ${password}
 
-    Input Text      id:txtEmail                     ${email}
-    Input Text      css:input[placeholder=Senha]    ${password}
-    Click Element   css:button[id*=Login]
+    Login With      ${email}    ${password}
 
 I must see the logged area
     Wait Until Page Contains   Aluguéis  5

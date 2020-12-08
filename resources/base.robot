@@ -3,3 +3,4 @@ Library     SeleniumLibrary
 
 Resource    hooks.robot
 Resource    kws.robot
+Resource    pages/LoginPage.robot
