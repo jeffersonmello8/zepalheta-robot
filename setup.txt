@@ -1,0 +1,5 @@
+#Up environment
+docker-compose up -d
+
+#Additional Configs
+docker exec -it zepalheta-api sh /home/node/api/setup.sh
