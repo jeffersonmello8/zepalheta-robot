@@ -27,6 +27,8 @@ Given that access the customer registration form
 When include this client:
     [Arguments]             ${name}     ${cpf}      ${address}       ${phone_number}
     
+    Remove Customer By Cpf  ${cpf}
+    
     Register New Customer   ${name}     ${cpf}      ${address}       ${phone_number}
 
 Then must see the notification:

@@ -1,5 +1,6 @@
 ***Settings***
 Library     SeleniumLibrary
+Library     libs/db.py
 
 Resource    hooks.robot
 Resource    kws.robot
