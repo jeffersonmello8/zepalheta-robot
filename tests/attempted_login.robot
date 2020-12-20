@@ -10,7 +10,7 @@ Suite Setup      Start Session
 Suite Teardown   Finish Session
 
 #Used to any tests cases
-Test Template   Attemped Login
+Test Template    Attemped Login
 
 ***Keywords***
 Attemped Login

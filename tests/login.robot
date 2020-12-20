@@ -13,5 +13,5 @@ Test Teardown   Finish Session
 ***Test Cases***
 Sucessful Login
     Acess login page
-    Submit my credentials   admin@zepalheta.com.br  pwd123
+    Submit my credentials   ${admin_user}  ${admin_pass}
     I must see the logged area

@@ -9,5 +9,5 @@ Finish Session
 Login Session
     Start Session
     
-    Go To           http://zepalheta-web:3000/
-    Login With      admin@zepalheta.com.br  pwd123
+    Go To           ${base_url} 
+    Login With      ${admin_user}  ${admin_pass}

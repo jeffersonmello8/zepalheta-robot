@@ -1,3 +1,5 @@
+File for to list configs required for to do the environment running
+
 #Up environment
 docker-compose up -d
 

@@ -2,7 +2,7 @@
 
 #Login
 Acess login page
-    Go To           http://zepalheta-web:3000/
+    Go To           ${base_url} 
 
 Submit my credentials
     [Arguments]     ${email}    ${password}
@@ -35,3 +35,14 @@ Then must see the notification:
     [Arguments]     ${expect_notice}
 
     Wait Until Element Contains     ${TOASTER_SUCESS}     ${expect_notice}    5
+
+Then must see the messages of validation for all fields
+    Wait Until Page Contains     Nome é obrigatório             5
+    Wait Until Page Contains     CPF é obrigatório              5
+    Wait Until Page Contains     Endereço é obrigatório         5
+    Wait Until Page Contains     Telefone é obrigatório         5
+
+Then must see the messages of validation
+    [Arguments]     ${expect_message}
+    
+    Wait Until Page Contains     ${expect_message}         5
