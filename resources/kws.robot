@@ -24,11 +24,17 @@ Given that access the customer registration form
     Wait Until Element Is Visible   ${CUSTOMERS_FORM}   5
     Click Element                   ${CUSTOMERS_FORM}
 
-When include this client:
+And that I have the following client:
     [Arguments]             ${name}     ${cpf}      ${address}       ${phone_number}
     
     Remove Customer By Cpf  ${cpf}
-    
+
+    Set Test Variable       ${name}
+    Set Test Variable       ${cpf}
+    Set Test Variable       ${address}
+    Set Test Variable       ${phone_number}
+
+When include this client
     Register New Customer   ${name}     ${cpf}      ${address}       ${phone_number}
 
 Then must see the notification:

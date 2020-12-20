@@ -10,21 +10,24 @@ Suite Teardown   Finish Session
 Fields Validation
     [Arguments]     ${name}     ${cpf}      ${address}     ${phone_number}    ${message_expected}
     Given that access the customer registration form
-    When include this client:  
+    And that I have the following client:
     ...     ${name}  ${cpf}  ${address}  ${phone_number}
+    When include this client 
     Then must see the messages of validation    ${message_expected}
 
 ***Test Cases***
 New Customer
     Given that access the customer registration form
-    When include this client:
+    And that I have the following client:
     ...     Jefferson Melo      02349724085     Rua Nunes Valente, 2005     85999999999
+    When include this client
     Then must see the notification:     Cliente cadastrado com sucesso!
 
 All Mandatory Fields
     Given that access the customer registration form
-    When include this client:  
+    And that I have the following client:
     ...     ${EMPTY}  ${EMPTY}  ${EMPTY}  ${EMPTY}
+    When include this client
     Then must see the messages of validation for all fields 
 
 Without Name
