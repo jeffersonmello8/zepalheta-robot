@@ -42,3 +42,8 @@ Without Address
 Without Phone       
     [Template]  Fields Validation
     Cássio Ramos      52654952070     Rua Nunes Valente, 2007    ${EMPTY}         Telefone é obrigatório 
+
+Invalid Phone       
+    [Template]  Fields Validation
+    Emerson Sheik     52654952070     Rua Nunes Valente, 2007    8599865579       Telefone inválido
+
