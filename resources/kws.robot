@@ -37,10 +37,10 @@ Then must see the notification:
     Wait Until Element Contains     ${TOASTER_SUCESS}     ${expect_notice}    5
 
 Then must see the messages of validation for all fields
-    Wait Until Page Contains     Nome é obrigatório             5
-    Wait Until Page Contains     CPF é obrigatório              5
-    Wait Until Page Contains     Endereço é obrigatório         5
-    Wait Until Page Contains     Telefone é obrigatório         5
+    Wait Until Element Contains     ${LABEL_NAME}           Nome é obrigatório          5
+    Wait Until Element Contains     ${LABEL_CPF}            CPF é obrigatório           5
+    Wait Until Element Contains     ${LABEL_ADDRESS}        Endereço é obrigatório      5
+    Wait Until Element Contains     ${LABEL_PHONE}          Telefone é obrigatório      5
 
 Then must see the messages of validation
     [Arguments]     ${expect_message}
