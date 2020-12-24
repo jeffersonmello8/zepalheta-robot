@@ -41,7 +41,7 @@ services:
       - zepalheta-network
 
   zepalheta-web:
-    image: qaninja/zp-web
+    image: qaninja/zp-web:v2
     container_name: zepalheta-web
     ports:
       - '3000:3000'

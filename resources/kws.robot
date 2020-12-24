@@ -15,7 +15,7 @@ I must see the logged area
 I must received an alert
     [Arguments]     ${expect_message}
 
-    Wait Until Element Contains    ${TOASTER_ERROR}    ${expect_message} 
+    Wait Until Element Contains    ${TOASTER_ERROR_P}    ${expect_message} 
 
 ## Customers
 Given that access the customer registration form
@@ -34,6 +34,9 @@ And that I have the following client:
     Set Test Variable       ${address}
     Set Test Variable       ${phone_number}
 
+But this customer already exists in the system
+    Insert Customer         ${name}     ${cpf}      ${address}       ${phone_number}
+
 When include this client
     Register New Customer   ${name}     ${cpf}      ${address}       ${phone_number}
 
@@ -41,6 +44,11 @@ Then must see the notification:
     [Arguments]     ${expect_notice}
 
     Wait Until Element Contains     ${TOASTER_SUCESS}     ${expect_notice}    5
+
+Then must see the error notification:
+    [Arguments]     ${expect_notice}
+
+    Wait Until Element Contains     ${TOASTER_ERROR}     ${expect_notice}    5
 
 Then must see the messages of validation for all fields
     Wait Until Element Contains     ${LABEL_NAME}           Nome é obrigatório          5

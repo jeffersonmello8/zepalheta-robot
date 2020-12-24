@@ -17,11 +17,21 @@ Fields Validation
 
 ***Test Cases***
 New Customer
+    [Tags]  Smoke 
     Given that access the customer registration form
     And that I have the following client:
     ...     Jefferson Melo      02349724085     Rua Nunes Valente, 2005     85999999999
     When include this client
     Then must see the notification:     Cliente cadastrado com sucesso!
+
+Duplicate Customer
+    [Tags]  Smoke
+    Given that access the customer registration form
+    And that I have the following client:
+    ...     Rafaela Isadora     55986264037     Rua Gazeta, 837             11993923657
+    But this customer already exists in the system
+    When include this client
+    Then must see the error notification:     Este CPF já existe no sistema!
 
 All Mandatory Fields
     Given that access the customer registration form
