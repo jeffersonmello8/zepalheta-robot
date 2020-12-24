@@ -60,3 +60,28 @@ Then must see the messages of validation
     [Arguments]     ${expect_message}
     
     Wait Until Page Contains     ${expect_message}         5
+
+# Equipments
+Given that access the equipments registration form
+    Wait Until Element Is Visible   ${NAV_EQUIPMENTS}      5
+    Click Element                   ${NAV_EQUIPMENTS} 
+    Wait Until Element Is Visible   ${EQUIPMENTS_FORM}     5
+    Click Element                   ${EQUIPMENTS_FORM}
+
+And that I have the following equipment:
+    [Arguments]                 ${name}     ${price}     
+    
+    Remove Equipments By Name   ${name}
+    
+    Set Test Variable           ${name}
+    Set Test Variable           ${price}
+
+When include this equipment
+    Register New Equipment   ${name}     ${price} 
+
+But this equipment already exists in the system
+    Insert Equipment         ${name}     ${price}
+
+Then must see the messages of validation for all fields in equipments registration form
+    Wait Until Element Contains     ${LABEL_NAME_EQUIPMENT}           Nome do equipo é obrigatório          5
+    Wait Until Element Contains     ${LABEL_PRICE_EQUIPMENT}          Diária do equipo é obrigatória        5

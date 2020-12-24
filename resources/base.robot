@@ -10,6 +10,7 @@ Resource    components/Toaster.robot
 
 Resource    pages/LoginPage.robot
 Resource    pages/CustomersPage.robot
+Resource    pages/EquipmentsPage.robot
 
 ***Variables***
 ${base_url}     http://zepalheta-web:3000/
