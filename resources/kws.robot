@@ -1,6 +1,6 @@
 ***Keywords***
 
-#Login
+## Login
 Acess login page
     Go To           ${base_url} 
 
@@ -17,10 +17,10 @@ I must received an alert
 
     Wait Until Element Contains    ${TOASTER_ERROR_P}    ${expect_message} 
 
-## Customers
+## Register Customers
 Given that access the customer registration form
     Go To Customers
-    
+
     Wait Until Element Is Visible   ${CUSTOMERS_FORM}   5
     Click Element                   ${CUSTOMERS_FORM}
 
@@ -61,7 +61,25 @@ Then must see the messages of validation
     
     Wait Until Page Contains     ${expect_message}         5
 
-# Equipments
+## Deletion Customers
+Given that I have a unwelcome customer:
+    [Arguments]     ${name}     ${cpf}      ${address}     ${phone_number}
+    
+    Remove Customer By Cpf  ${cpf}
+    Insert Customer         ${name}     ${cpf}      ${address}       ${phone_number}
+
+    Set Test Variable       ${cpf}
+
+And access the customers list
+    Go To Customers
+
+When I remove this customer
+    ${formatted_cpf}=           format_cpf      ${cpf}
+
+    Go To Customers Details     ${formatted_cpf}
+    Click Button Remove Customer
+
+## Register Equipments
 Given that access the equipments registration form
     Wait Until Element Is Visible   ${NAV_EQUIPMENTS}      5
     Click Element                   ${NAV_EQUIPMENTS} 

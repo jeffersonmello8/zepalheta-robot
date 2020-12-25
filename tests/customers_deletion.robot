@@ -13,22 +13,3 @@ Customer Deletion
     And access the customers list
     When I remove this customer 
     Then must see the notification:     Cliente removido com sucesso!
-
-***Keywords***
-Given that I have a unwelcome customer:
-    [Arguments]     ${name}     ${cpf}      ${address}     ${phone_number}
-    
-    Remove Customer By Cpf  ${cpf}
-    Insert Customer         ${name}     ${cpf}      ${address}       ${phone_number}
-
-    Set Test Variable       ${cpf}
-
-And access the customers list
-    Go To Customers
-
-When I remove this customer
-    ${formatted_cpf}=           format_cpf      ${cpf}
-
-    Go To Customers Details     ${formatted_cpf}
-    Click Button Remove Customer
-
