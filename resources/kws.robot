@@ -19,8 +19,8 @@ I must received an alert
 
 ## Customers
 Given that access the customer registration form
-    Wait Until Element Is Visible   ${NAV_CUSTOMERS}    5
-    Click Element                   ${NAV_CUSTOMERS}
+    Go To Customers
+    
     Wait Until Element Is Visible   ${CUSTOMERS_FORM}   5
     Click Element                   ${CUSTOMERS_FORM}
 

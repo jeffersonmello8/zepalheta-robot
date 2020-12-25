@@ -19,3 +19,17 @@ Register New Customer
     Input Text      id:phone_number     ${phone_number}   
 
     Click Element   xpath://button[text()='CADASTRAR']
+
+Go To Customers Details
+    [Arguments]     ${formatted_cpf}
+
+    ${element}=     Set Variable        //td[text()='${formatted_cpf}']
+
+    Wait Until Element Is Visible       ${element}      5
+    Click Element                       ${element}
+    
+Click Button Remove Customer
+    ${button}=      Set Variable        //button[text()='APAGAR'] 
+    
+    Wait Until Element Is Visible       ${button}       5
+    Click Element                       ${button}
