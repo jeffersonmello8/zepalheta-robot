@@ -13,3 +13,4 @@ Customer Deletion
     And access the customers list
     When I remove this customer 
     Then must see the notification:     Cliente removido com sucesso!
+    And this customer should not be displayed in the list

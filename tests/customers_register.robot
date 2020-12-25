@@ -17,12 +17,13 @@ Fields Validation
 
 ***Test Cases***
 New Customer
-    [Tags]  Smoke 
+    [Tags]  Smoke
     Given that access the customer registration form
     And that I have the following client:
     ...     Jefferson Melo      02349724085     Rua Nunes Valente, 2005     85999999999
     When include this client
     Then must see the notification:     Cliente cadastrado com sucesso!
+    And this customer should be displayed in the list
 
 Duplicate Customer
     [Tags]  Smoke

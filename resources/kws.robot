@@ -45,6 +45,13 @@ Then must see the notification:
 
     Wait Until Element Contains     ${TOASTER_SUCESS}     ${expect_notice}    5
 
+And this customer should be displayed in the list
+    ${formatted_cpf}=               Format Cpf      ${cpf}  
+
+    Go Back
+    Wait Until Element Is Visible   css:table       5
+    Table Should Contain            css:table       ${formatted_cpf}
+
 Then must see the error notification:
     [Arguments]     ${expect_notice}
 
@@ -75,9 +82,14 @@ And access the customers list
 
 When I remove this customer
     ${formatted_cpf}=           format_cpf      ${cpf}
+    
+    Set Test Variable   ${formatted_cpf}
 
     Go To Customers Details     ${formatted_cpf}
     Click Button Remove Customer
+
+And this customer should not be displayed in the list
+    Wait Until Page Does Not Contain    ${formatted_cpf}    
 
 ## Register Equipments
 Given that access the equipments registration form
