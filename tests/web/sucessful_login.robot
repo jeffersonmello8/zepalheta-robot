@@ -1,7 +1,7 @@
 ***Settings***
 Documentation   Login
 
-Resource        ../resources/base.robot
+Resource        ../../resources/base.robot
 
 #Perform before any test case
 Test Setup      Start Session
