@@ -1,15 +1,18 @@
 ***Settings***
-Documentation         Service Layer
+Documentation         Service layer
 
 Library               Collections
 Library               RequestsLibrary
 
+*** Variables ***
+${base_api_url}       http://zepalheta-web:3333  
+
 ***Keywords***
 New Session
     [Arguments]         ${email}         ${password}
-    Create Session      zp-api          http://zepalheta-web:3333
+    Create Session      zp-api           ${base_api_url}
 
-    &{headers}          Create Dictionary     Content-Type=application/json
+    &{header}           Create Dictionary     Content-Type=application/json
     ${payload}          Create Dictionary     email=${email}    password=${password}
 
     ${resp}=            Post Request     zp-api        /sessions       data=${payload}         headers=${headers}

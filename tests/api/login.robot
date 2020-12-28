@@ -1,4 +1,5 @@
 ***Settings***
+Documentation           Login testing using the service layer
 Resource                ../../resources/services.robot
 
 ***Test Cases***

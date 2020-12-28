@@ -1,4 +1,4 @@
-File for to list configs required for to do the environment running
+#File for to list configs required for to do the environment running
 
 #Install Dependencies 
 pip3 install -r {DIR_project}/requirements.txt

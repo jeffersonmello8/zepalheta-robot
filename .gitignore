@@ -30,3 +30,4 @@ __pycache__
 .classpath
 .settings
 .jython_cache
+start_enviroment.sh

@@ -1,7 +1,7 @@
 ***Settings***
 Documentation   Customers Registration
 
-Resource        ../../resources/base.robot
+Resource         ../../resources/base.robot
 
 Suite Setup      Login Session
 Suite Teardown   Finish Session
@@ -17,7 +17,7 @@ Fields Validation
 
 ***Test Cases***
 New Customer
-    [Tags]  Smoke
+    [Tags]  smoke
     Given that access the customer registration form
     And that I have the following client:
     ...     Jefferson Melo      02349724085     Rua Nunes Valente, 2005     (85)9.9999-9999
@@ -26,7 +26,7 @@ New Customer
     And this customer should be displayed in the list
 
 Duplicate Customer
-    [Tags]  Smoke
+    [Tags]  smoke
     Given that access the customer registration form
     And that I have the following client:
     ...     Rafaela Isadora     55986264037     Rua Gazeta, 837             (11)9.9392-3657
