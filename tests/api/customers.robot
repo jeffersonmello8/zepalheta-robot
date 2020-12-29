@@ -1,16 +1,48 @@
 *** Settings ***
 Documentation   Customers testing using the service layer
 Resource        ../../resources/services.robot
+Resource        ../../resources/base.robot
 
 *** Test Cases ***
 New Customer
-    Create Session      zp-api      ${base_api_url}
+    &{payload}=         Create Dictionary     name=Eloá Porto       cpf=929.977.566-42     address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538
 
-    &{headers}          Create Dictionary     Content-Type=application/json     Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDkxODE4MDgsImV4cCI6MTYwOTI2ODIwOCwic3ViIjoiYzBiODRmN2UtYzFlNi00ZjI1LTkzNDAtYjA2N2Y1ZTA1YzgwIn0.GDONVaJL_yB1vmg4ftFjE77Yh7nvuV1NYJNngKD8Gug
-    &{payload}          Create Dictionary     name=Eloá Porto       cpf=929.977.566-42     address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538
+    Delete Costumer     ${payload['cpf']}    
 
-    Delete Request      zp-api      /customers/${payload['cpf']}       headers=${headers}       
-
-    ${resp}=            Post Request     zp-api        /customers       data=${payload}         headers=${headers}
+    ${resp}=            Post Costumer  ${payload}
 
     Status Should Be    200              ${resp}
+
+
+New Customer (Without name)
+    &{payload}=         Create Dictionary     cpf=929.977.566-42     address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538       
+
+    ${resp}=            Post Costumer  ${payload}
+
+    Should Be Equal     ${resp.json()['message']}            "name" is required
+    Should Be Equal     ${resp.json()['statusCode']}         ${400}
+
+New Customer (Without cpf)
+    &{payload}=         Create Dictionary     name=Eloá Porto        address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538
+
+    ${resp}=            Post Costumer  ${payload}
+
+    Should Be Equal     ${resp.json()['message']}            "cpf" is required
+    Should Be Equal     ${resp.json()['statusCode']}         ${400}
+
+New Customer (Without address)
+    &{payload}=         Create Dictionary     name=Eloá Porto        cpf=929.977.566-42               phone_number=(31) 9.8435-1538
+
+    ${resp}=            Post Costumer  ${payload}
+
+    Should Be Equal     ${resp.json()['message']}            "address" is required
+    Should Be Equal     ${resp.json()['statusCode']}         ${400}
+
+
+New Customer (Without phone)
+    &{payload}=         Create Dictionary     name=Eloá Porto        cpf=929.977.566-42               address=Rua Flamboyant, 174     
+
+    ${resp}=            Post Costumer  ${payload}
+
+    Should Be Equal     ${resp.json()['message']}            "phone_number" is required
+    Should Be Equal     ${resp.json()['statusCode']}         ${400}
