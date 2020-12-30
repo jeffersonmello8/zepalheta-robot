@@ -5,7 +5,7 @@ Library               Collections
 Library               RequestsLibrary
 
 *** Variables ***
-${base_api_url}       http://zepalheta-web:3333  
+${base_api_url}       http://zepalheta-api:3333  
 
 ***Keywords***
 ##Helpers
