@@ -6,7 +6,10 @@ Start Session
     Run Keyword If  "${browser}" == "firefox"
     ...     Open Firefox
 
-    Set Window Size     1920    957   
+    Set Window Size     1920    957  
+
+Finish TestCase
+    Capture Page Screenshot
 
 Finish Session
     Close Browser 

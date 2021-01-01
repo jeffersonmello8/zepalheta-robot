@@ -4,10 +4,13 @@ Documentation   Login
 Resource        ../../resources/base.robot
 
 #Perform before any test case
-Test Setup      Start Session
+Test Setup       Start Session
 
 #Perform after any test case
-Test Teardown   Finish Session
+Test Teardown    Finish TestCase
+
+#Perform after test suite
+Suite Teardown   Finish Session
 
 ***Test Cases***
 Sucessful Login
