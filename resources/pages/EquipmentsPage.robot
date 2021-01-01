@@ -5,6 +5,7 @@ Documentation       Representation the equipments page with its actions and elem
 ${EQUIPMENTS_FORM}          css:a[href="/equipos/register"]
 ${LABEL_NAME_EQUIPMENT}     css:label[for=equipo-name]
 ${LABEL_PRICE_EQUIPMENT}    css:label[for=daily_price]
+${BUTTON_REGISTER}          xpath://button[text()='CADASTRAR']
 
 ***Keywords***
 Register New Equipment 
@@ -12,5 +13,6 @@ Register New Equipment
 
     Input Text      id:equipo-name             ${name}     
     Input Text      id:daily_price             ${price}  
-
-    Click Element   xpath://button[text()='CADASTRAR']
+    
+    Wait Until Element Is Visible       ${BUTTON_REGISTER}       5
+    Click Element                       ${BUTTON_REGISTER} 
