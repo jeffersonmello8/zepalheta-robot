@@ -19,8 +19,7 @@ pipeline {
         }
         stage('UI Tests') {
             steps {
-                sh 'robot -d logs/ tests/web/'
-                input(message: 'Já pode continuar?')
+                sh 'robot -d logs/ -v browser:headless tests/web/'
             }
         }
         
