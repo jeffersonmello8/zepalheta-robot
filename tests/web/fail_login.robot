@@ -9,9 +9,6 @@ Suite Setup      Start Session
 #Perform after test suite
 Suite Teardown   Finish Session
 
-#Perform after test case
-Test Teardown    Finish TestCase
-
 #Used to any tests cases
 Test Template    Attemped Login
 
