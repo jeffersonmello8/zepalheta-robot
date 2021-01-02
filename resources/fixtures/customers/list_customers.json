@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name": "César Geraldo Santos",
+            "cpf": "695.436.393-61",
+            "address": "Travessa Tiradentes, 660",
+            "phone_number": "(68) 9.8693-0466"
+        },
+        {
+            "name": "Liz Gabriela Peixoto",
+            "cpf": "627.537.540-04",
+            "address": "Rua Paquetá, 998",
+            "phone_number": "(11) 9.8857-5002"
+        },
+        {
+            "name": "Thales Felipe Rodrigues",
+            "cpf": "219.706.960-87",
+            "address": "Travessa 9, 323",
+            "phone_number": "(11) 9.8542-5003"
+        },
+        {
+            "name": "Sarah Camila Viana",
+            "cpf": "321.415.150-92",
+            "address": "Rua oito, 1004",
+            "phone_number": "(85) 9.9875-5004"
+        }
+    ]
+}
