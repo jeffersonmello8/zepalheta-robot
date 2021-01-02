@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation   Customers testing using the service layer
-Resource        ../../resources/services.robot
-Resource        ../../resources/base.robot
+Resource        ../../../resources/services.robot
+Resource        ../../../resources/base.robot
 
 *** Test Cases ***
 New Customer
