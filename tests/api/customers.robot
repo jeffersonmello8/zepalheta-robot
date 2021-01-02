@@ -5,7 +5,7 @@ Resource        ../../resources/base.robot
 
 *** Test Cases ***
 New Customer
-    &{payload}=         Create Dictionary     name=Eloá Porto       cpf=929.977.566-42     address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538
+    ${payload}          Get Json            customers/eloa.json
 
     Delete Costumer     ${payload['cpf']}    
 
@@ -13,9 +13,8 @@ New Customer
 
     Status Should Be    200              ${resp}
 
-
 New Customer (Without name)
-    &{payload}=         Create Dictionary     cpf=929.977.566-42     address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538       
+    ${payload}          Get Json            customers/without_name.json      
 
     ${resp}=            Post Costumer  ${payload}
 
@@ -23,7 +22,7 @@ New Customer (Without name)
     Should Be Equal     ${resp.json()['statusCode']}         ${400}
 
 New Customer (Without cpf)
-    &{payload}=         Create Dictionary     name=Eloá Porto        address=Rua Flamboyant, 174      phone_number=(31) 9.8435-1538
+    ${payload}          Get Json            customers/without_cpf.json 
 
     ${resp}=            Post Costumer  ${payload}
 
@@ -31,7 +30,7 @@ New Customer (Without cpf)
     Should Be Equal     ${resp.json()['statusCode']}         ${400}
 
 New Customer (Without address)
-    &{payload}=         Create Dictionary     name=Eloá Porto        cpf=929.977.566-42               phone_number=(31) 9.8435-1538
+    ${payload}          Get Json            customers/without_address.json 
 
     ${resp}=            Post Costumer  ${payload}
 
@@ -40,7 +39,7 @@ New Customer (Without address)
 
 
 New Customer (Without phone)
-    &{payload}=         Create Dictionary     name=Eloá Porto        cpf=929.977.566-42               address=Rua Flamboyant, 174     
+    ${payload}          Get Json            customers/without_phone.json    
 
     ${resp}=            Post Costumer  ${payload}
 

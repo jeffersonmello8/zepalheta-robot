@@ -4,6 +4,7 @@ Library     libs/db.py
 
 Resource    hooks.robot
 Resource    kws.robot
+Resource    helpers.robot
 
 Resource    components/Sidebar.robot
 Resource    components/Toaster.robot

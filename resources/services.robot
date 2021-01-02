@@ -42,7 +42,6 @@ Post Costumer
     [Return]            ${resp}
 
 #DELETE /customers
-
 Delete Costumer
     [Arguments]         ${cpf}
 
