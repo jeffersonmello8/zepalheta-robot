@@ -31,3 +31,9 @@ Get Unique Customer
     Status Should Be    200                   ${resp}
     Should Be Equal     ${customer['cpf']}    ${resp.json()['cpf']}
     Should Be Equal     ${customer['name']}   ${resp.json()['name']}
+
+Get Customer Not Found
+    ${resp}             Get Unique Costumer             baa7a52965b99778f38ef37f235e9053
+
+    Status Should Be    404                             ${resp} 
+    Should Be Equal     ${resp.json()['message']}       Customer not found  

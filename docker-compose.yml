@@ -27,7 +27,7 @@ services:
       - zepalheta-network
 
   zepalheta-api:
-    image: qaninja/zp-api
+    image: qaninja/zp-api:v2
     container_name: zepalheta-api
     environment:
       - NODE_ENV=development
