@@ -5,7 +5,6 @@ Resource        ../../../resources/base.robot
 
 *** Test Cases ***
 Get Customer List
-
     ${list_customers}   Get Json              customers/list_customers.json
 
     FOR     ${item}     IN      @{list_customers['data']}
@@ -18,3 +17,17 @@ Get Customer List
 
     ${total}=           Get Length             ${resp.json()}
     Should Be True      ${total} > 0 
+
+Get Unique Customer
+    ${customer}         Get Json              customers/gabriela.json
+
+    Delete Costumer     ${customer['cpf']}
+
+    ${resp}             Post Costumer         ${customer}
+    ${customer_id}      Convert To String     ${resp.json()['id']}
+
+    ${resp}             Get Unique Costumer   ${customer_id}  
+
+    Status Should Be    200                   ${resp}
+    Should Be Equal     ${customer['cpf']}    ${resp.json()['cpf']}
+    Should Be Equal     ${customer['name']}   ${resp.json()['name']}

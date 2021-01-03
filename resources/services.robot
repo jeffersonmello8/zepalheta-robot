@@ -54,6 +54,19 @@ Get Costumers
 
     [Return]            ${resp}
 
+Get Unique Costumer
+    [Arguments]         ${customer_id}
+
+    Create Session      zp-api                ${base_api_url}
+
+    ${token}=           Get Session Token
+
+    &{headers}=         Create Dictionary     Content-Type=application/json     Authorization=${token}
+
+    ${resp}=            Get Request           zp-api                            /customers/${customer_id}     headers=${headers}
+
+    [Return]            ${resp}
+
 #DELETE /customers
 Delete Costumer
     [Arguments]         ${cpf}
